@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Engineer Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    nav {
+      width: 250px;
+      background-color: #f4f4f4;
+      border-right: 1px solid #ddd;
+      padding: 10px;
+      box-sizing: border-box;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    nav .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 15px 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-pic">
+  <ul>
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#work-summary">Work Summary</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#resume">Download Resume</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <section id="home">
+    <h2>Home</h2>
+    <p>Welcome to my portfolio! Learn more about my work and experiences.</p>
+  </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Details about me go here.</p>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>List your key technical skills here.</p>
+  </section>
+  <section id="experience">
+    <h2>Experience</h2>
+    <p>Details about your work experience go here.</p>
+  </section>
+  <section id="education">
+    <h2>Education</h2>
+    <p>List your educational qualifications here.</p>
+  </section>
+  <section id="work-summary">
+    <h2>Work Summary</h2>
+    <p>Provide a summary of your professional journey.</p>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <p>Describe some of the notable projects you have worked on.</p>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Provide your contact details or a contact form here.</p>
+  </section>
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="#" download>Download my Resume</a></p>
+  </section>
+</div>
+
+<script>
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+      this.classList.add("active");
+      const section = document.querySelector(this.getAttribute("href"));
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
